@@ -1,0 +1,27 @@
+.header {
+background-color: crimson;
+height: 75px;
+font-size: 30px;
+text-align: left;
+padding-left: 15px;
+padding-top: 15px;
+}
+
+.header-title {
+    color: silver;
+    
+}
+
+.header-title:hover {
+    color: grey;
+}
+
+.btn {
+    color: silver;
+    background-color: crimson;
+}
+
+.btn:hover {
+    color: crimson;
+    background-color: silver;
+}
