@@ -9,8 +9,6 @@ A web based app that allows a user to take and save notes.
 heroku link:
 
 https://murmuring-headland-15717.herokuapp.com/ 
-
-https://git.heroku.com/murmuring-headland-15717.git
 ## Table of contents
 * [Installation](#installation)
 * [Usage](#usage)
