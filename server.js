@@ -5,7 +5,6 @@ const notes = require('./db/db.json');
 const uuid = require("uuid");
 
 const PORT = process.env.PORT || 3001;
-const PORT = process.env.PORT || 3001;
 const app = express();
 
 
@@ -42,6 +41,6 @@ app.get("*", (req, res) => res.sendFile(path.join(__dirname, "./public/index.htm
 app.get("/public/notes", (req, res) => res.sendFile(path.join(__dirname, "./public/notes.html")))
 
 
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
-});
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+  });
