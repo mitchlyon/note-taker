@@ -11,14 +11,14 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("./assets"));
+app.use(express.static("./public"));
 
-//GET API db.json
+
 app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./db/db.json"))
 });
 
-// Post function to add new notes to db.json
+
 app.post("/api/notes", (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
     const newNotes = req.body;
@@ -28,7 +28,7 @@ app.post("/api/notes", (req, res) => {
     res.json(notes);
 });
 
-//used for deleting notes
+
 app.delete("/api/notes/:id", (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
     const delNote = notes.filter((rmvNote) => rmvNote.id !== req.params.id);
@@ -37,8 +37,8 @@ app.delete("/api/notes/:id", (req, res) => {
 })
 
 
-app.get("*", (req, res) => res.sendFile(path.join(__dirname, "./assets/index.html")))
-app.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "./assets/notes.html")))
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "./public/index.html")))
+app.get("/public/notes", (req, res) => res.sendFile(path.join(__dirname, "./public/notes.html")))
 
 
 app.listen(3001, () => {
